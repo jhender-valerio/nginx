@@ -52,17 +52,18 @@ metadata:
     name: nginx-api
 spec:
   ports:
-  - name: https
-    port: 443
-    targetPort: proxy-https
-    protocol: TCP
   - name: http
     port: 80
     targetPort: proxy-http
     protocol: TCP
+  - name: https
+    port: 443
+    targetPort: proxy-https
+    protocol: TCP
   selector:
     name: proxy-api
   type: LoadBalancer
+
         
 ---
 
